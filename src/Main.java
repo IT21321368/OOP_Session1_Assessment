@@ -2,14 +2,23 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        CashOnDelivery COD = new CashOnDelivery(1000.00,"LKR","PENDING","no 5,main road,colombo");
+        BankTransfer BT = new BankTransfer(1500.00,"LKR","COMPLETED","BOC","13264978","444555");
+        CreditCardPayment CreditPay = new CreditCardPayment(45500.00,"LKR","FAILED","16453242","W.P.Perera","2029.10.14",10000.00);
+        DebitCardPayment DebitPay = new DebitCardPayment(3000.00,"LKR","PENDING","4652357","D.H.Senadeera","2022.12.12",8500.00);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        COD.processPayment();
+        BT.processPayment();
+        CreditPay.processPayment();
+        DebitPay.processPayment();
+
+        COD.generateReceipt();
+        BT.generateReceipt();
+        CreditPay.generateReceipt();
+        DebitPay.generateReceipt();
+
+
+
+
     }
 }
