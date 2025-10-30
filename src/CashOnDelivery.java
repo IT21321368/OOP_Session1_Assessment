@@ -8,6 +8,7 @@ public class CashOnDelivery extends Payment{
 
     @Override
     public void processPayment(){
+        System.out.println();
         System.out.println("Cash will be collected at delivery address: " + this.deliveryAddress);
     }
 }

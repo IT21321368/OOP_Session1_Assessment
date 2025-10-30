@@ -12,6 +12,7 @@ public class BankTransfer extends Payment{
 
     @Override
     public void processPayment(){
+        System.out.println();
         System.out.println("Initiating bank transfer to " + this.bankName + " using account " + this.accountNumber + " with reference " + this.referenceCode );
     }
 }

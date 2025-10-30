@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -7,15 +11,27 @@ public class Main {
         CreditCardPayment CreditPay = new CreditCardPayment(45500.00,"LKR","FAILED","16453242","W.P.Perera","2029.10.14",10000.00);
         DebitCardPayment DebitPay = new DebitCardPayment(3000.00,"LKR","PENDING","4652357","D.H.Senadeera","2022.12.12",8500.00);
 
-        COD.processPayment();
-        BT.processPayment();
-        CreditPay.processPayment();
-        DebitPay.processPayment();
+//        COD.processPayment();
+//        BT.processPayment();
+//        CreditPay.processPayment();
+//        DebitPay.processPayment();
+//
+//        COD.generateReceipt();
+//        BT.generateReceipt();
+//        CreditPay.generateReceipt();
+//        DebitPay.generateReceipt();
 
-        COD.generateReceipt();
-        BT.generateReceipt();
-        CreditPay.generateReceipt();
-        DebitPay.generateReceipt();
+        List<Payment> payments = new ArrayList<>();
+        payments.add(COD);
+        payments.add(BT);
+        payments.add(CreditPay);
+        payments.add(DebitPay);
+
+        for (Payment p: payments){
+            p.processPayment();
+            p.generateReceipt();
+            System.out.println("***************");
+        }
 
 
 
